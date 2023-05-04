@@ -26,5 +26,5 @@ jobs:
       - name: Install Tox and any other packages
         run: pip install tox
       - name: Run Tox
-        # Run tox using the version of Python in `PATH`
+        # Run tox using the version of Python in `PATH` ok
         run: tox -e py
