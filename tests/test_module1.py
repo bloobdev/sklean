@@ -1,6 +1,6 @@
 import unittest
 
-from sklean.module1 import Number
+from sklean123.module1 import Number
 
 
 class TestSimple(unittest.TestCase):

@@ -4,19 +4,19 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='sklean',
+    name='sklean123',
     author='Tom Chen',
     author_email='tomchen.org@gmail.com',
     description='Example PyPI (Python Package Index) Package',
     keywords='example, pypi, package',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/bloobdev/sklean',
+    url='https://github.com/bloobdev/sklean123',
     project_urls={
-        'Documentation': 'https://github.com/bloobdev/sklean',
+        'Documentation': 'https://github.com/bloobdev/sklean123',
         'Bug Reports':
-        'https://github.com/bloobdev/sklean/issues',
-        'Source Code': 'https://github.com/bloobdev/sklean',
+        'https://github.com/bloobdev/sklean123/issues',
+        'Source Code': 'https://github.com/bloobdev/sklean123',
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
@@ -46,8 +46,8 @@ setuptools.setup(
     },
     # entry_points={
     #     'console_scripts': [  # This can provide executable scripts
-    #         'run=sklean:main',
-    # You can execute `run` in bash to run `main()` in src/sklean/__init__.py
+    #         'run=sklean123:main',
+    # You can execute `run` in bash to run `main()` in src/sklean123/__init__.py
     #     ],
     # },
 )
