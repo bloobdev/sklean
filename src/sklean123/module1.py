@@ -531,7 +531,344 @@ SVM - IV
 
 
 #####################################################################################################################################
+K-means clustering - Implementation 2
 
+    # importing libraries
+    import pandas as pd
+    import numpy as np
+    from sklearn.cluster import KMeans
+    from sklearn.preprocessing import LabelEncoder
+    from sklearn.preprocessing import MinMaxScaler
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    %matplotlib inline
+
+
+
+    train = pd.read_csv("titanic_train.csv")
+    test = pd.read_csv("titanic_test.csv")
+
+    print("***** Train_Set *****")
+    print(train.describe())
+    print("\n")
+    print("***** Test_Set *****")
+    print(test.describe())
+
+    # check for NA values
+
+    # for the train set
+    train.isna().head()
+
+    print("***** In the train set *****")
+    print(train.isna().sum())
+    print("\n")
+    print("***** In the test set *****")
+    print(test.isna().sum())
+
+    # fill missing values with mean column values in the train set
+    train.fillna(train.mean(), inplace=True)
+    print(train.isna().sum())
+
+    # fill missing values with mean column values in the test set
+    test.fillna(test.mean(), inplace=True)
+    print(test.isna().sum())
+
+    train = train.drop(['Name','Ticket','Cabin','Embarked'], axis = 1)
+    test = test.drop(['Name','Ticket','Cabin','Embarked'], axis = 1)
+
+    labelEncloder = LabelEncoder()
+    labelEncloder.fit(train['Sex'])
+    train["Sex"] = labelEncloder.transform(train["Sex"])
+    test["Sex"] = labelEncloder.transform(test["Sex"])
+
+    train.info(); test.info()
+
+    # model
+    X = np.array(train.drop(["Survived"],1).astype(float))
+    y = np.array(train["Survived"])
+
+    kmeans = KMeans(n_clusters=2)
+    kmeans.fit(X)
+
+    # calculate the silhouette_score
+    from sklearn.metrics import silhouette_score
+
+    print(silhouette_score(X, kmeans.labels_))
+
+    #! pip install yellowbrick
+
+    from yellowbrick.cluster import KElbowVisualizer
+
+    model = KMeans(random_state=0)
+    visualizer = KElbowVisualizer(model, k=(2,6),
+                                metric='silhouette',
+                                timings = False)
+
+    # fit the data and visualize
+    visualizer.fit(X)
+
+    visualizer.poof()
+
+####################################################
+K-Means Clustering using sklearn
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    sns.set() #for plot styling
+    import sklearn.datasets as data
+
+    # from sklearn.datasets.samples_generator import make blobs
+    from sklearn.datasets import make_blobs
+
+    X,y_true = data.make_blobs(n_samples=300, centers=4, cluster_std=0.9, random_state=0)
+    plt.scatter(X[:,0],X[:,1],c=y_true,cmap="rainbow")
+
+    ## Elbow method
+
+    from sklearn.cluster import KMeans
+
+    wcss = []
+    for i in range(1,11):
+        km = KMeans(n_clusters=i)
+        km.fit_predict(X)
+        wcss.append(km.inertia_)
+
+    wcss
+
+    plt.plot(range(1,11),wcss)
+    plt.xlabel("No. of clusters")
+    plt.ylabel("wcss")
+
+    from sklearn.cluster import KMeans
+    kmean=KMeans(n_clusters=4)
+    kmean.fit(X)
+    y_kmean = kmean.predict(X)
+
+    plt.scatter(X[:,0],X[:,1],c=y_kmean,cmap='viridis')
+    centers = kmean.cluster_centers_
+    plt.scatter(centers[:,0],centers[:,1],c='red',s=200,alpha=0.5)
+
+    #Limitations of K-Means Algorithm
+    from sklearn.datasets import make_moons
+    X, y = make_moons(200, noise=.05, random_state=0)
+    plt.scatter(X[:, 0], X[:, 1], c = y,cmap='rainbow');
+
+    labels = KMeans(2, random_state=0).fit_predict(X)
+    plt.scatter(X[:, 0], X[:, 1], c=labels,s=50, cmap='viridis');
+
+    #Comparision with some other Non-Convex Clustering Algorithm
+    from sklearn.cluster import SpectralClustering
+    import warnings
+    warnings.simplefilter("ignore")
+
+    model = SpectralClustering(n_clusters=2, affinity='nearest_neighbors',assign_labels='kmeans')
+    labels = model.fit_predict(X)
+    plt.scatter(X[:, 0], X[:, 1], c=labels,s=50, cmap='viridis');
+#######################################################
+DBSCAN - Density Based Spatial Clustering for Applicariton with Noise
+
+    # importing necessary libraries
+    import numpy as np
+    import pandas as pd
+    import math
+    import matplotlib.pyplot as plt
+    np.random.seed(42)
+
+    # function to create points in a circle
+    def CirclePoints(r, n=200, noise=20):
+        return [(math.cos(2*math.pi/n*i)*r+np.random.uniform(-noise,noise),
+                math.sin(2*math.pi/n*i)*r+np.random.uniform(-noise,noise)) for i in range(n)]
+
+    # Creating 1st circle
+    df = pd.DataFrame(CirclePoints(100,200,20))
+    plt.scatter(df[0], df[1], s=10)
+
+    # Creating 2nd Circle and adding to previous sets of points
+    df = pd.concat([df,pd.DataFrame(CirclePoints(300,400,40))])
+    plt.scatter(df[0], df[1], s=10)
+
+    # Creating 3rd circle and adding to previous sets of points
+    df = pd.concat([df,pd.DataFrame(CirclePoints(500,700,60))])
+    plt.scatter(df[0],df[1],s=10)
+
+    # Creating random noise points and adding to previous sets points
+    df = pd.concat([df, pd.DataFrame([(np.random.randint(-650,650),
+                                    np.random.randint(-650,650)) for i in range(200)])])
+    plt.scatter(df[0], df[1], s=10)
+
+    from sklearn.cluster import KMeans
+    kmeans = KMeans(n_clusters=3)
+    kmeans.fit(df[[0,1]])
+
+    df["KMeans"] = kmeans.labels_
+
+    plt.figure(figsize=(8,8))
+    plt.scatter(df[0], df[1], c=df["KMeans"])
+
+    # Using DBSCAN without arguments
+    from sklearn.cluster import DBSCAN
+    dbscan = DBSCAN()
+    dbscan.fit(df[[0,1]])
+
+    df["DBSCAN"] = dbscan.labels_
+    plt.figure(figsize=(8,8))
+    plt.scatter(df[0], df[1], c= df["DBSCAN"])
+
+    # Using DBSCAN with arguments
+    dbscan = DBSCAN(eps=50, min_samples=10)
+    dbscan.fit(df[[0,1]])
+
+    df["DBSCAN"] = dbscan.labels_
+    plt.figure(figsize=(8,8))
+    plt.scatter(df[0], df[1], c=df["DBSCAN"])
+######################################################
+Agglomerative clustering - Implementation 2
+
+
+    # importing libraries
+    import numpy as np
+
+    X = np.array([[5,3],
+                [10,15],
+                [15,12],
+                [24,10],
+                [30,30],
+                [85,70],
+                [71,80],
+                [60,78],
+                [70,55],
+                [80,91],])
+
+    import matplotlib.pyplot as plt
+
+    labels = range(1,11)
+    plt.figure(figsize=(10,7))
+    plt.subplots_adjust(bottom=0.1)
+    plt.scatter(X[:,0],X[:,1], label='True Position')
+
+    for label, x,y in zip(labels, X[:,0], X[:,1]):
+        plt.annotate(label,
+                    xy=(x,y), xytext=(-3,3),
+                    textcoords = 'offset points', ha = 'right', va = 'bottom')
+        plt.show()
+
+    # dendogram
+    from scipy.cluster.hierarchy import dendrogram, linkage
+    from matplotlib import pyplot as plt
+
+    linked = linkage(X,'single')
+
+    labelList = range(1,11)
+
+    plt.figure(figsize=(10,7))
+    dendrogram(linked,
+            orientation='top',
+            labels=labelList,
+            distance_sort='descending',
+            show_leaf_counts=True)
+    plt.show()
+##############################################################################
+Agglomerative Clustering - Implementation-Copy1
+
+    # importing libraries
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    # reading the dataset
+    df = pd.read_csv("shopping data.csv")
+
+    print(df.shape)
+    print(df.head())
+
+    df.info()
+
+    # filtering data required for clustering
+    data = df.iloc[:,3:5].values
+
+    # hierarchy clustering
+    import scipy.cluster.hierarchy as sch
+
+    plt.figure(figsize=(15,8))
+    dend = sch.dendrogram(sch.linkage(data, method='ward'))
+    plt.axhline(y=120)
+
+    # agglomerative clustering
+    from sklearn.cluster import AgglomerativeClustering
+    clusters = AgglomerativeClustering(n_clusters=5,affinity='euclidean', linkage='complete')
+
+    clusters.fit_predict(data)
+
+    plt.figure(figsize=(15,8))
+    plt.scatter(data[:,0], data[:,1],
+            c=clusters.labels_,
+            cmap="rainbow")
+#############################################################################
+Agglomerative Clustering - Implementation
+
+    # importing libraries
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+
+    # reading the dataset
+    df = pd.read_csv("shopping data.csv")
+
+    print(df.shape)
+    print(df.head())
+
+    # filtering data required for clustering
+    data = df.iloc[:,3:5].values
+
+    # hierarchy clustering
+    import scipy.cluster.hierarchy as sch
+
+    plt.figure(figsize=(15,8))
+    dend = sch.dendrogram(sch.linkage(data, method='ward'))
+    plt.axhline(y=120)
+
+    # agglomerative clustering
+    from sklearn.cluster import AgglomerativeClustering
+    clusters = AgglomerativeClustering(n_clusters=5,affinity='euclidean', linkage='complete')
+
+    clusters.fit_predict(data)
+
+    plt.figure(figsize=(15,8))
+    plt.scatter(data[:,0], data[:,1],
+            c=clusters.labels_,
+            cmap="rainbow")
+
+    # advantage over k-means
+    from sklearn.datasets import make_moons, make_circles
+
+    dummy_data = make_moons(n_samples=500,
+                        shuffle=True,
+                        noise=0.09,
+                        random_state=40)
+    dummy_data1 = make_circles(n_samples=1000,
+                            shuffle=True,
+                            noise=0.03,
+                            random_state=40,
+                            factor=0.6)
+
+    plt.scatter(dummy_data1[0][:,0], dummy_data1[0][:,1],
+            c=dummy_data1[1])
+
+    from sklearn.cluster import KMeans
+    kmeans = KMeans(n_clusters=2, random_state=0).fit(dummy_data1[0])
+    plt.scatter(dummy_data1[0][:,0],dummy_data1[0][:,1], c= kmeans.labels_)
+
+    from sklearn.cluster import AgglomerativeClustering
+    clusters = AgglomerativeClustering(n_clusters=2,
+                                    affinity="euclidean",
+                                    linkage="single")
+
+    clusters.fit_predict(dummy_data1[0])
+    plt.scatter(dummy_data1[0][:,0], dummy_data1[0][:,1], c=clusters.labels_)
+###########################################################
+
+    
 Question Bank 
     What is a decision tree? 
     a.	A tree with leaves representing the decision made by the algorithm 
