@@ -528,6 +528,555 @@ SVM - IV
     plt.xlim(xx.min(), xx.max())
     plt.title('SVC with linear kernel')
     plt.show()
+
+
+#####################################################################################################################################
+
+Question Bank 
+    What is a decision tree? 
+    a.	A tree with leaves representing the decision made by the algorithm 
+    b.	A graph with branches representing the decisions made by the algorithm 
+    c.	A chart that displays data in a hierarchical structure 
+    d.	None of the above 
+    Answer: b 
+    
+    What is a decision tree regressor? 
+    a.	A decision tree that predicts continuous values 
+    b.	A decision tree that predicts categorical values 
+    c.	A decision tree that predicts both continuous and categorical values 
+    d.	None of the above 
+    Answer: a 
+    
+    Which type of machine learning algorithm is Classification and Regression Tree (CART)? a. Unsupervised Learning 
+    b.	Supervised Learning 
+    c.	Reinforcement Learning 
+    d.	Semi-supervised Learning 
+    Answer: b 
+    
+    What is pruning in the context of Decision Trees? 
+    a.	A technique for removing features from the dataset 
+    b.	technique for reducing the complexity of the model 
+    c.	A technique for increasing the accuracy of the model 
+    d.	A technique for handling missing values 
+    Answer: b 
+        
+    In a Classification and Regression Tree (CART), what is the primary objective of splitting the data into subsets? 
+    a.	To make the model more complex 
+    b.	To reduce the accuracy of the model 
+    c.	To maximize the variance in each subset 
+    d.	To increase the homogeneity within each subset 
+    Answer: d 
+        
+    What type of variables can be used in a Classification and Regression Tree (CART)? 
+    a.	Only continuous variables 
+    b.	Only categorical variables 
+    c.	Both continuous and categorical variables 
+    d.	Discrete variables 
+    Answer: c 
+    
+    What is a decision tree classifier? 
+    a.	A decision tree that predicts continuous values 
+    b.	A decision tree that predicts categorical values 
+    c.	A decision tree that predicts both continuous and categorical values 
+    d.	None of the above 
+    Answer: b 
+    
+    How does a decision tree work? 
+    a.	It splits the dataset into subsets based on the value of a feature 
+    b.	It predicts the target variable based on the features of the dataset 
+    c.	It calculates the entropy of the dataset to determine the best split 
+    d.	All of the above 
+    Answer: a 
+    
+    What is the goal of a decision tree? 
+    a.	To maximize the accuracy of the predictions 
+    b.	To minimize the complexity of the model 
+    c.	To maximize the information gain at each split 
+    d.	All of the above 
+    Answer: d 
+    
+    What is entropy in the context of decision trees? 
+    a.	A measure of the disorder or randomness of a dataset 
+    b.	A measure of the accuracy of the predictions made by the tree 
+    c.	A measure of the complexity of the tree 
+    d.	None of the above 
+    Answer: a 
+    
+    What is information gain in the context of decision trees? 
+    a.	The reduction in entropy after a dataset is split on a feature 
+    b.	The increase in entropy after a dataset is split on a feature 
+    c.	The accuracy of the predictions made by the tree 
+    d.	None of the above 
+    Answer: a 
+    
+    How does a decision tree handle missing values? 
+    a.	It assigns the most common value of the feature to the missing values 
+    b.	It assigns the mean value of the feature to the missing values 
+    c.	It uses a surrogate feature to predict the missing values 
+    d.	All of the above 
+    Answer: d 
+    
+    How does a decision tree handle categorical features? 
+    a.	It converts them into numerical values 
+    b.	It creates a binary feature for each possible value 
+    c.	It uses a one-hot encoding to represent the categorical values 
+    d.	All of the above 
+    Answer: d 
+    
+    What is pruning in the context of decision trees? 
+    a.	Removing unnecessary branches from the tree to reduce complexity and overfitting 
+    b.	Adding extra branches to the tree to increase accuracy 
+    c.	Assigning more weight to certain features in the tree 
+    d.	None of the above 
+    Answer: a 
+    
+    What is overfitting in the context of decision trees? 
+    a.	When the tree is too simple and does not capture the complexity of the data 
+    b.	When the tree is too complex and fits the noise in the data instead of the signal 
+    c.	When the tree is unable to predict the target variable accurately 
+    d.	None of the above 
+    Answer: b 
+    
+    What is underfitting in the context of decision trees? 
+    a.	When the tree is too simple and does not capture the complexity of the data 
+    b.	When the tree is too complex and fits the noise in the data instead of the signal 
+    c.	When the tree is unable to predict the target variable accurately 
+    d.	None of the above 
+    Answer: a 
+    
+    What is a node in a decision tree? 
+    a)	A decision or a condition that splits the data into subsets. 
+    b)	The final prediction or classification made by the tree. 
+    c)	The root of the tree. 
+    Answer: a
+    What is a leaf node in a decision tree? 
+    a)	A decision or a condition that splits the data into subsets. 
+    b)	The final prediction or classification made by the tree. 
+    c)	The root of the tree. 
+    Answer: a
+    What is a feature in a decision tree? 
+    a)	The target variable. 
+    b)	The variables used to make decisions or splits in the tree. 
+    c)	The data used to train the model. 
+    Answer: b
+
+    
+    What is clustering? 
+    a)	A technique used to classify objects into categories. 
+    b)	A technique used to reduce the dimensionality of data. 
+    c)	A technique used to make predictions about new data. 
+    Answer: a) A technique used to classify objects into categories. 
+    
+    What is the objective of clustering? 
+    a)	To group similar objects together. 
+    b)	To identify patterns in the data. 
+    c)	To predict the target variable. 
+    Answer: a) To group similar objects together. 
+    
+    What is the difference between clustering and classification? 
+    a)	Clustering is unsupervised while classification is supervised. 
+    b)	Clustering is used for continuous variables while classification is used for categorical variables. 
+    c)	Clustering is used to find patterns while classification is used to make predictions. 
+    Answer: a) Clustering is unsupervised while classification is supervised. 
+    
+    What is the difference between hierarchical and partitioning clustering? 
+    a)	Hierarchical clustering is used for categorical variables while partitioning clustering is used for continuous variables. 
+    b)	Hierarchical clustering creates a tree-like structure while partitioning clustering creates a flat structure. 
+    c)	Hierarchical clustering is supervised while partitioning clustering is unsupervised. 
+    Answer: b) Hierarchical clustering creates a tree-like structure while partitioning clustering creates a flat structure. 
+    
+    What is K-means clustering? 
+    a)	A type of partitioning clustering. 
+    b)	A type of hierarchical clustering. 
+    c)	A type of density-based clustering. 
+    Answer: a) A type of partitioning clustering. 
+    
+    What is the objective of K-means clustering? 
+    a)	To minimize the distance between the centroids and the data points. 
+    b)	To maximize the distance between the centroids and the data points. 
+    c)	To group the data points into a predetermined number of clusters. 
+    Answer: a) To minimize the distance between the centroids and the data points. 
+    
+    What is the elbow method in K-means clustering? 
+    a)	A technique used to select the number of clusters. 
+    b)	A technique used to measure the distance between the centroids and the data points. 
+    c)	A technique used to visualize the clustering results. 
+    Answer: a) A technique used to select the number of clusters. 
+    
+    What is the objective of clustering? 
+    a)	To create a predictive model that can classify or predict the outcome of a given data point 
+    b)	To identify patterns and group similar data points together based on similarity 
+    c)	To identify the most important features in a dataset 
+    d)	To reduce the dimensionality of a dataset 
+    Answer: b) To identify patterns and group similar data points together based on similarity 
+    
+    
+    What is the difference between K-Means and Hierarchical Clustering? 
+    a)	K-Means is faster and more accurate than Hierarchical Clustering 
+    b)	Hierarchical Clustering is faster and more accurate than K-Means 
+    c)	K-Means is a non-parametric algorithm, while Hierarchical Clustering is a parametric algorithm 
+    d)	K-Means requires the user to specify the number of clusters, while Hierarchical Clustering does not 
+    Answer: d) K-Means requires the user to specify the number of clusters, while Hierarchical Clustering does not 
+    
+    What is a dendrogram in the context of Agglomerative Clustering? 
+    a)	A visualization of the distance between each pair of data points 
+    b)	A visualization of the number of clusters required to obtain a given level of similarity 
+    c)	A visualization of the hierarchy of clusters obtained by the algorithm 
+    d)	A visualization of the silhouette score for different clustering solutions 
+    Answer: c) A visualization of the hierarchy of clusters obtained by the algorithm 
+    
+    What is the Silhouette score in clustering? 
+    a)	A measure of how well the data points are separated into clusters. 
+    b)	A measure of how well the centroids are placed. 
+    c)	A measure of how well the clustering algorithm is performing. 
+    Answer: a) A measure of how well the data points are separated into clusters. 
+    
+    What is the difference between centroid-based and density-based clustering? 
+    a)	Centroid-based clustering creates a tree-like structure while density-based clustering creates a flat structure. 
+    b)	Centroid-based clustering assumes that clusters have a spherical shape while density-based clustering can handle clusters of any shape. 
+    c)	Centroid-based clustering is unsupervised while density-based clustering is supervised. 
+    Answer: b) Centroid-based clustering assumes that clusters have a spherical shape while densitybased clustering can handle clusters of any shape. 
+    
+    What is DBSCAN? 
+    a)	A type of centroid-based clustering. 
+    b)	A type of density-based clustering. 
+    c)	A type of hierarchical clustering. 
+    Answer: b) A type of density-based clustering. 
+    
+    What is the objective of DBSCAN? 
+    a)	To minimize the distance between the centroids and the data points. 
+    b)	To maximize the distance between the centroids and the data points. 
+    c)	To group the data points into clusters of high density. 
+    Answer: c) To group the data points into clusters of high density. 
+    
+    
+    What is the disadvantage of Agglomerative Clustering? 
+    a)	It is computationally expensive 
+    b)	It can only handle categorical variables 
+    c)	It is prone to producing unbalanced clusters 
+    d)	It requires a pre-defined number of clusters 
+    Answer: a) It is computationally expensive 
+    
+    What is the purpose of backpropagation in ANN? 
+    A.	To adjust the weights of the neural network during training 
+    B.	To propagate signals forward through the network 
+    C.	To adjust the learning rate of the network 
+    D.	None of the above 
+    Answer: A. To adjust the weights of the neural network during training 
+    
+    Which type of learning is used to train ANNs using examples? 
+    A.	Supervised learning 
+    B.	Unsupervised learning 
+    C.	Reinforcement learning 
+    D.	All of the above 
+    Answer: A. Supervised learning 
+    
+    What is the primary purpose of ANNs? 
+    A.	To perform classification tasks 
+    B.	To perform regression tasks 
+    C.	To perform both classification and regression tasks 
+    D.	None of the above 
+    Answer: C. To perform both classification and regression tasks 
+    
+    Which of the following is an advantage of using ANNs over traditional algorithms? 
+    A.	ANNs can learn from data 
+    B.	ANNs are faster than traditional algorithms 
+    C.	ANNs are easier to program than traditional algorithms 
+    D.	None of the above 
+    Answer: A. ANNs can learn from data 
+    
+    Which of the following is a disadvantage of using ANNs? 
+    A.	ANNs are computationally expensive 
+    B.	ANNs are not as accurate as traditional algorithms 
+    C.	ANNs require large amounts of data to train D. None of the above 
+    Answer: A. ANNs are computationally expensive 
+    
+    Which layer of an ANN is responsible for making predictions? 
+    A.	Input layer 
+    B.	Hidden layer 
+    C.	Output layer 
+    D.	None of the above 
+    Answer: C. Output layer 
+    
+    Which of the following is an example of a feedforward neural network? 
+    A.	Recurrent neural network 
+    B.	Convolutional neural network 
+    C.	Perceptron 
+    D.	None of the above 
+    Answer: C. Perceptron 
+    
+    Which of the following is an example of a recurrent neural network? 
+    A.	Perceptron 
+    B.	Convolutional neural network 
+    C.	Long short-term memory (LSTM) 
+    D.	None of the above 
+    Answer: C. Long short-term memory (LSTM) 
+    
+    Which type of learning is used to train ANNs without labeled data? 
+    A.	Supervised learning 
+    B.	Unsupervised learning 
+    C.	Reinforcement learning 
+    D.	None of the above 
+    Answer: B. Unsupervised learning 
+    
+    What is the role of the activation function in a neuron? 
+    A.	To normalize the output of the neuron to a specific range 
+    B.	To introduce non-linearity into the output of the neuron 
+    C.	To adjust the weights of the connections between neurons 
+    D.	To compute the error between the predicted and actual outputs of the neuron Answer: B. To introduce non-linearity into the output of the neuron 
+    Answer: B
+    
+    What is overfitting in the context of ANNs? 
+    A.	When the model is too simple and fails to capture the complexity of the data 
+    B.	When the model is too complex and fits the noise in the data instead of the underlying patterns 
+    C.	When the model has too few neurons and cannot learn the underlying patterns in the data D. When the model has too many neurons and cannot generalize to new data 
+    Answer: B. When the model is too complex and fits the noise in the data instead of the underlying patterns 
+    
+    What is the basic unit of an artificial neuron in an ANN? 
+    A.	Input 
+    B.	Output 
+    C.	Activation Function 
+    D.	Weight 
+    Answer: C. Activation Function 
+    
+    What is the purpose of the hidden layers in an ANN? 
+    A.	To provide an additional input to the output layer 
+    B.	To provide a feedback loop to the input layer 
+    C.	To perform feature engineering on the input data 
+    D.	To increase the complexity of the model and improve its performance 
+    Answer: D. To increase the complexity of the model and improve its performance 
+    
+    Which of the following is an example of unsupervised learning in ANNs? 
+    A.	K-means clustering 
+    B.	Decision tree 
+    C.	Random forest 
+    D.	None of the above 
+    Answer: A. K-means clustering 
+    
+    Which of the following is an example of reinforcement learning in ANNs? 
+    A.	Q-learning 
+    B.	Gradient descent 
+    C.	Backpropagation 
+    D.	None of the above 
+    Answer: A. Q-learning 
+    
+    
+    What does SVM stand for? 
+    A.	Support Vector Machine 
+    B.	Simple Vector Model 
+    C.	Singular Value Method 
+    D.	Sequential Vector Mapping 
+    Answer: A. Support Vector Machine 
+    
+    What is the main objective of SVM? 
+    A.	To find the maximum margin hyperplane that separates the data 
+    B.	To find the minimum margin hyperplane that separates the data 
+    C.	To classify the data into different groups 
+    D.	None of the above 
+    Answer: A. To find the maximum margin hyperplane that separates the data 
+    
+    What is the kernel function in SVM? 
+    A.	It is a function used to transform the input data into a higher-dimensional space 
+    B.	It is a function used to transform the output data into a lower-dimensional space 
+    C.	It is a function used to normalize the input data 
+    D.	None of the above 
+    Answer: A. It is a function used to transform the input data into a higher-dimensional space 
+    
+    Which of the following is a popular kernel function used in SVM? 
+    A.	Linear kernel 
+    B.	Polynomial kernel 
+    C.	RBF kernel 
+    D.	All of the above 
+    Answer: D. All of the above 
+    
+    Which type of SVM is used for binary classification problems? 
+    A.	Linear SVM 
+    B.	Nonlinear SVM 
+    C.	One-class SVM 
+    D.	None of the above 
+    Answer: A. Linear SVM 
+    
+    Which type of SVM is used for multi-class classification problems? 
+    A.	Linear SVM 
+    B.	Nonlinear SVM 
+    C.	One-class SVM 
+    D.	None of the above 
+    Answer: B. Nonlinear SVM 
+    
+    Which of the following is an advantage of using SVM? 
+    A.	It is effective in high-dimensional spaces 
+    B.	It is less computationally expensive than other algorithms 
+    C.	It can handle non-linear decision boundaries 
+    D.	None of the above 
+    Answer: A. It is effective in high-dimensional spaces 
+    
+    Which of the following is a disadvantage of using SVM? 
+    A.	It is sensitive to the choice of kernel function 
+    B.	It can be computationally expensive for large datasets 
+    C.	It can overfit the data if the margin is too small 
+    D.	All of the above 
+    Answer: D. All of the above 
+    
+    Which of the following is used to determine the optimal hyperplane in SVM? 
+    A.	Margin 
+    B.	Support vectors 
+    C.	Both margin and support vectors 
+    D.	None of the above 
+    Answer: C. Both margin and support vectors 
+    
+    What is the goal of SVM? 
+    A.	To maximize the margin between the decision boundary and the data points 
+    B.	To minimize the number of misclassifications 
+    C.	To maximize the number of correctly classified data points 
+    D.	To minimize the number of support vectors 
+    Answer: A. To maximize the margin between the decision boundary and the data points 
+    
+    What is a kernel function in the context of SVM? 
+    A.	A function used to transform the input data to a higher dimensional space 
+    B.	A function used to regularize the weights in the model 
+    C.	A function used to initialize the weights in the model 
+    D.	A function used to reduce the dimensionality of the input data 
+    Answer: A. A function used to transform the input data to a higher dimensional space 
+    
+    What is the role of support vectors in SVM? 
+    A.	They define the decision boundary of the SVM 
+    B.	They are the data points closest to the decision boundary 
+    C.	They are the data points with the highest weight in the model 
+    D.	They are the data points with the lowest weight in the model 
+    Answer: B. They are the data points closest to the decision boundary 
+    
+    What is the difference between a linear SVM and a nonlinear SVM? 
+    A.	A linear SVM can only separate the data with a straight line, while a nonlinear SVM can separate the data with a curved boundary 
+    B.	A linear SVM can only handle two-class problems, while a nonlinear SVM can handle multiclass problems 
+    C.	A linear SVM can only handle numerical data, while a nonlinear SVM can handle both numerical and categorical data 
+    D.	A linear SVM is faster and less complex than a nonlinear SVM 
+    Answer: A
+    
+    What is the margin in SVM? 
+    A.	It is the distance between the hyperplane and the nearest data point 
+    B.	It is the distance between the hyperplane and the farthest data point 
+    C.	It is the distance between the hyperplane and the mean of the data 
+    D.	None of the above 
+    Answer: A. It is the distance between the hyperplane and the nearest data point 
+    
+    Which of the following is used to measure the quality of the hyperplane in SVM? 
+    A.	Accuracy 
+    B.	Precision 
+    C.	Recall 
+    D.	F1-score 
+    Answer: D. F1-score 
+    
+    Which of the following is an example of a linear SVM? 
+    A.	Soft-margin SVM 
+    B.	Hard-margin SVM 
+    C.	Kernel SVM 
+    D.	None of the above 
+    Answer: B. Hard-margin SVM 
+    
+    Which of the following is an example of a nonlinear SVM? 
+    A.	Soft-margin SVM 
+    B.	Hard-margin SVM 
+    C.	Kernel SVM 
+    D.	None of the above 
+    Answer: C. Kernel SVM 
+    
+    What is Market Basket Analysis (MBA)? 
+    A.	It is a data analysis technique that identifies the association between products frequently purchased together 
+    B.	It is a technique for predicting future stock market trends 
+    C.	It is a technique for analyzing sales trends of a company 
+    D.	None of the above 
+    Answer: A. It is a data analysis technique that identifies the association between products frequently purchased together 
+    
+    What is a market basket? 
+    A.	It is the basket used by customers to carry their purchases in a store 
+    B.	It is a collection of items purchased together in a single transaction 
+    C.	It is the list of items available for purchase in a store 
+    D.	None of the above 
+    Answer: B. It is a collection of items purchased together in a single transaction 
+    
+    What is the purpose of market basket analysis? 
+    A.	To understand customer behavior and buying patterns 
+    B.	To increase store revenue 
+    C.	To improve customer experience 
+    D.	All of the above 
+    Answer: D. All of the above 
+    
+    What is the objective of Market Basket Analysis? 
+    A.	To identify the most profitable products in a company's product line 
+    B.	To identify the items that are frequently purchased together by customers 
+    C.	To identify the most popular products in a market 
+    D.	To identify the products that have the highest profit margins 
+    Answer: B. To identify the items that are frequently purchased together by customers 
+    
+    What is the support metric in Market Basket Analysis? 
+    A.	A measure of how frequently the item set appears in the transaction data 
+    B.	A measure of the strength of association between the items in the item set 
+    C.	A measure of the lift between the items in the item set 
+    D.	A measure of the confidence between the items in the item set 
+    Answer: A. A measure of how frequently the item set appears in the transaction data 
+    
+    What is the lift metric in Market Basket Analysis? 
+    A.	The ratio of the support of the itemset to the support of the individual items 
+    B.	The ratio of the support of the itemset to the support of the complement of the itemset 
+    C.	The ratio of the support of the itemset to the total number of transactions in the dataset D. The probability that the itemset will be purchased together 
+    Answer: A. The ratio of the support of the itemset to the support of the individual items 
+    
+    What is market basket analysis? 
+    A.	A statistical technique to identify the most popular items in a store 
+    B.	A technique to analyze customer buying behavior and identify relationships between products 
+    C.	A method to optimize store layout and product placement 
+    D.	A tool to track inventory levels in a store 
+    Answer: B. A technique to analyze customer buying behavior and identify relationships between products 
+    
+    Which of the following is the measure of association used in market basket analysis? A. Confidence 
+    B.	Lift 
+    C.	Support 
+    D.	All of the above 
+    Answer: D. All of the above 
+    
+    What is support in market basket analysis? 
+    A.	It is the probability of an item being purchased in a transaction 
+    B.	It is the probability of two items being purchased together in a transaction 
+    C.	It is the ratio of transactions containing an item to the total number of transactions 
+    D.	None of the above 
+    Answer: C. It is the ratio of transactions containing an item to the total number of transactions 
+    
+    What is confidence in market basket analysis? 
+    A.	It is the probability of an item being purchased given that another item is purchased 
+    B.	It is the probability of two items being purchased together in a transaction 
+    C.	It is the ratio of transactions containing both items to the total number of transactions containing the first item 
+    D.	None of the above 
+    Answer: A. It is the probability of an item being purchased given that another item is purchased 
+    
+    What is lift in market basket analysis? 
+    A.	It is the ratio of the probability of both items being purchased together to the product of their individual probabilities 
+    B.	It is the ratio of the probability of one item being purchased to the probability of the other item being purchased 
+    C.	It is the ratio of the number of transactions containing both items to the total number of transactions 
+    D.	None of the above 
+    Answer: A. It is the ratio of the probability of both items being purchased together to the product of their individual probabilities 
+    
+    What does a lift value greater than 1 indicate in market basket analysis? 
+    A.	There is a positive association between the items 
+    B.	There is a negative association between the items 
+    C.	There is no association between the items 
+    D.	None of the above 
+    Answer: A. There is a positive association between the items 
+    
+    Which of the following is an algorithm used for market basket analysis? 
+    A.	Apriori algorithm 
+    B.	Decision tree algorithm 
+    C.	K-means algorithm 
+    D.	None of the above 
+    Answer: A. Apriori algorithm 
+    
+    What is the minimum support threshold in the Apriori algorithm? 
+    A.	It is the minimum number of items required in a transaction for it to be included in the analysis 
+    B.	It is the minimum probability required for an item to be considered frequent 
+    C.	It is the minimum number of transactions containing an item required for it to be considered frequent 
+    D.	None of the above 
+    Answer: C. It is the minimum number of transactions containing an item required for it to be considered 
+        
+        
     
     Usage:
     my_function()
